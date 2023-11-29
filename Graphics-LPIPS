@@ -1,0 +1,117 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "LPIPS.ipynb",
+      "private_outputs": true,
+      "provenance": [],
+      "machine_shape": "hm",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "accelerator": "GPU"
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/tradebridge001/X-tra-Telegram/blob/master/Graphics-LPIPS\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "pg6ZMtLjo8D9"
+      },
+      "source": [
+        "!nvidia-smi -L"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "kqMuRErTo5Mv"
+      },
+      "source": [
+        "!git clone https://github.com/MEPP-team/Graphics-LPIPS"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "B3yK1mPqpCJB"
+      },
+      "source": [
+        "%cd Graphics-LPIPS/\n",
+        "# !pip install -r requirements.txt"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "7PQb9FrZpMtl"
+      },
+      "source": [
+        "!python GraphicsLpips_2imgs.py -p0 imgs/ex_ref.png -p1 imgs/ex_p0.png --use_gpu"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "RbwJ6To4piqX"
+      },
+      "source": [
+        "!python GraphicsLpips_csvFile.py -m './checkpoints/GraphicsLPIPS_FinalNetwork/latest_net_.pth' --use_gpu"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "rNrPf5MdrLBi"
+      },
+      "source": [
+        "%cd /content/"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "_oPrmqMWw7Pc"
+      },
+      "source": [
+        "!unzip /content/seguy.zip"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "OpBwmYfgw9RP"
+      },
+      "source": [],
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
